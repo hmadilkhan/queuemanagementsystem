@@ -27,9 +27,8 @@ class Form extends Component
     }
 
     #[On('editCity')] 
-    public function editCountry($cityId)
+    public function editCity($cityId)
     {
-        dd($cityId);
         $city = City::findOrFail($cityId);
         $this->cityId = $city->id;
         $this->country_id = $city->country_id;

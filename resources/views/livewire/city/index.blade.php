@@ -22,7 +22,7 @@
                         <td>{{ $city->country->name }}</td>
                         <td>{{ $city->name }}</td>
                         <td class="text-center">
-                            <a wire:click="editCity',{cityId: {{ $city->id }}}" style="cursor: pointer;" data-toggle="tooltip" title="Edit">
+                            <a wire:click="$dispatch('editCity',{cityId: {{ $city->id }}})" style="cursor: pointer;" data-toggle="tooltip" title="Edit">
                                 <i class="icofont-pencil text-warning fs-5"></i></a>
                             <a wire:click="$dispatch('confirmDelete', {deleteId: {{ $city->id }}})" style="cursor: pointer;" data-toggle="tooltip" title="Delete" class="ml-2">
                                 <i class="icofont-trash text-danger fs-5"></i></a>

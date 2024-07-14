@@ -29,10 +29,10 @@ $logout = function (Logout $logout) {
                 <x-nav-link x-icon="icofont-home" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                     Dashboard
                 </x-nav-link>
-                <x-nav-link x-icon="icofont-home" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
+                <x-nav-link x-icon="icofont-building" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
                     Country
                 </x-nav-link>
-                <x-nav-link x-icon="icofont-home" :href="route('cities.index')" :active="request()->routeIs('countries.index')" wire:navigate>
+                <x-nav-link x-icon="icofont-building-alt" :href="route('cities.index')" :active="request()->routeIs('countries.index')" wire:navigate>
                     City
                 </x-nav-link>
                 <li class="collapsed">
