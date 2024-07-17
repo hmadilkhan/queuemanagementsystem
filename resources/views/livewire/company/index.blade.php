@@ -1,10 +1,14 @@
 <div>
     <livewire:company.form />
     <livewire:company.delete />
-    <div class="card mt-3">
-        <div class="card-header">
-            <h4 class="card-title">company List</h3>
+    <div class="row align-items-center">
+        <div class="border-0 mb-0">
+            <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                <h3 class="fw-bold mb-0">Companies</h3>
+            </div>
         </div>
+    </div>
+    <div class="card mt-2">
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped ">
                 <thead>
@@ -24,7 +28,7 @@
                     @foreach ($companies as $key => $company)
                     <tr>
                         <td>{{ ++$key }}</td>
-                        <td><img src="{{ asset('storage/'.$company->image) }}" class="rounded" width="30" height="30"/></td>
+                        <td><img src="{{ asset('storage/'.$company->image) }}" class="rounded" width="30" height="30" /></td>
                         <td>{{ $company->name }}</td>
                         <td>{{ $company->country->name }}</td>
                         <td>{{ $company->city->name }}</td>

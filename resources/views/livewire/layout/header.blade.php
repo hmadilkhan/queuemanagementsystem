@@ -1,3 +1,14 @@
+<?php
+
+use App\Livewire\Actions\Logout;
+
+$logout = function (Logout $logout) {
+    $logout();
+
+    $this->redirect('/', navigate: true);
+};
+
+?>
 <!-- Body: Header -->
 <div class="header">
     <nav class="navbar py-4">
@@ -32,7 +43,7 @@
                             <div class="list-group m-2 ">
                                 <a href="task.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Task</a>
                                 <a href="members.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-ui-user-group fs-6 me-3"></i>members</a>
-                                <a wire:click="" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
+                                <a wire:click="logout" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
                                 <div>
                                     <hr class="dropdown-divider border-dark">
                                 </div>

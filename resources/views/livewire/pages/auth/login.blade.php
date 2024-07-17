@@ -32,9 +32,9 @@ $login = function () {
         </div>
         <!-- Email Address -->
         <div class="col-12">
-            <x-input-label class="form-label text-white" for="email" :value="__('Email')" />
-            <x-text-input class="form-control form-control-lg" wire:model="form.email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('form.email')" class="mt-2" />
+            <x-input-label class="form-label " for="email" :value="__('Username')" />
+            <x-text-input class="form-control form-control-lg " wire:model="form.username" id="username" class="block mt-1 w-full" type="text" name="username" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('form.username')" class="mt-2" />
         </div>
 
         <!-- Password -->

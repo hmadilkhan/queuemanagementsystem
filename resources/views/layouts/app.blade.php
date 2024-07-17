@@ -28,7 +28,6 @@
 
         <!-- main body area -->
         <div class="main px-lg-4 px-md-4">
-
             <!-- Page Heading -->
             <livewire:layout.header />
 
@@ -36,37 +35,22 @@
                 {{ $slot }}
             </main>
         </div>
-
         <!-- Page Content -->
-
     </div>
-    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!-- jQuery base library needed -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="{{ asset('assets/bundles/dataTables.bundle.js') }}"></script>
     <!-- Jquery Page Js -->
     <script src="{{ asset('page/template.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script>
+        // $(window).on('load', function(){
             $('.select2').select2();
-        });
-        $('.datatable')
-            .addClass('nowrap')
-            .dataTable({
-                responsive: true,
-                columnDefs: [{
-                    targets: [-1, -3],
-                    className: 'dt-body-right'
-                }]
-            });
-        $(".sidebar").hover(function() {
-            $(".sidebar").removeClass("sidebar-mini")
-        }, function() {
-            $(".sidebar").addClass("sidebar-mini")
-        })
-        $(".sidebar").addClass("sidebar-mini")
+            $('.datatable').dataTable();
+        // });
     </script>
     @livewireScripts
     @yield('scripts')

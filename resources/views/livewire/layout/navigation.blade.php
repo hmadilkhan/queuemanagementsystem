@@ -29,17 +29,34 @@ $logout = function (Logout $logout) {
                 <x-nav-link x-icon="icofont-home" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                     Dashboard
                 </x-nav-link>
-                <x-nav-link x-icon="icofont-building" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
-                    Country
-                </x-nav-link>
-                <x-nav-link x-icon="icofont-building-alt" :href="route('cities.index')" :active="request()->routeIs('countries.index')" wire:navigate>
-                    City
-                </x-nav-link>
-                <li class="collapsed">
-                    <a class="m-link " wire:click="logout">
-                        <i class="icofont-logout fs-5"></i> <span>Logout</span> <span class=" ms-auto text-end fs-5"></span>
-                    </a>
-                </li>
+
+            </li>
+            <li class="collapsed">
+                <a class="m-link {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}" data-bs-toggle="collapse" data-bs-target="#module-types" href="#">
+                    <i class="icofont-briefcase"></i><span>Operations</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                <!-- Menu: Sub menu ul -->
+                <ul class="sub-menu collapse {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}" id="module-types">
+                    <x-nav-link x-icon="icofont-building" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
+                        Country
+                    </x-nav-link>
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('cities.index')" :active="request()->routeIs('cities.index')" wire:navigate>
+                        City
+                    </x-nav-link>
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('roles.index')" :active="request()->routeIs('roles.index')" wire:navigate>
+                        Roles
+                    </x-nav-link>
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('companies.index')" :active="request()->routeIs('companies.index')" wire:navigate>
+                        Company
+                    </x-nav-link>
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('branches.index')" :active="request()->routeIs('branches.index')" wire:navigate>
+                        Branch
+                    </x-nav-link>
+                </ul>
+            </li>
+            <li class="collapsed">
+                <a class="m-link " wire:click="logout">
+                    <i class="icofont-logout fs-5"></i> <span>Logout</span> <span class=" ms-auto text-end fs-5"></span>
+                </a>
             </li>
         </ul>
     </div>
@@ -137,3 +154,13 @@ $logout = function (Logout $logout) {
     </div>
 </div>
 </nav> --}}
+@script
+<script>
+    $(".sidebar").hover(function() {
+        $(".sidebar").removeClass("sidebar-mini")
+    }, function() {
+        $(".sidebar").addClass("sidebar-mini")
+    })
+    $(".sidebar").addClass("sidebar-mini")
+</script>
+@endscript
