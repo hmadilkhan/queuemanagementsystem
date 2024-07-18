@@ -32,10 +32,10 @@ $logout = function (Logout $logout) {
 
             </li>
             <li class="collapsed">
-                <a class="m-link {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}" data-bs-toggle="collapse" data-bs-target="#module-types" href="#">
+                <a class="m-link {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' or Route::currentRouteName() == 'users.index' ) ? 'show' : '' }}" data-bs-toggle="collapse" data-bs-target="#module-types" href="#">
                     <i class="icofont-briefcase"></i><span>Operations</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}" id="module-types">
+                <ul class="sub-menu collapse {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' or Route::currentRouteName() == 'users.index' ) ? 'show' : '' }}" id="module-types">
                     <x-nav-link x-icon="icofont-building" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
                         Country
                     </x-nav-link>
@@ -50,6 +50,9 @@ $logout = function (Logout $logout) {
                     </x-nav-link>
                     <x-nav-link x-icon="icofont-building-alt" :href="route('branches.index')" :active="request()->routeIs('branches.index')" wire:navigate>
                         Branch
+                    </x-nav-link>
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('users.index')" :active="request()->routeIs('users.index')" wire:navigate>
+                        Users
                     </x-nav-link>
                 </ul>
             </li>

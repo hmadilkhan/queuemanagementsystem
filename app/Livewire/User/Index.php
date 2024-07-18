@@ -23,11 +23,11 @@ class Index extends Component
     #[On('refreshUsers')] 
     public function refreshUsers()
     {
-        $this->users = User::with("country","city")->get();
+        $this->users = User::with("company","branch")->get();
     }
 
     public function render()
     {
-        return view('livewire.user.index');
+        return view('livewire.user.index')->layout('layouts.app');
     }
 }
