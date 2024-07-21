@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/my-task.style.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     @livewireStyles
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js'])  --}}
 </head>
 
 <body class="font-sans antialiased">
@@ -38,26 +38,22 @@
         <!-- Page Content -->
     </div>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
-    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js" ></script>
-    <script src="{{ asset('assets/bundles/dataTables.bundle.js') }}" ></script>
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="{{ asset('assets/bundles/dataTables.bundle.js') }}"></script>
     <!-- Jquery Page Js -->
-    <script src="{{ asset('page/template.js') }}" ></script>
+    <script src="{{ asset('page/template.js') }}"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // $(window).on('load', function(){
+        document.addEventListener('livewire:navigated', () => {
             $('.select2').select2();
             $('.datatable').dataTable();
         });
-        // $(window).on('load', function(){
-        // document.addEventListener('livewire:navigated', () => {
-            // $('.select2').select2();
-            // $('.datatable').dataTable();
-        // });
     </script>
     @livewireScripts
     @yield('scripts')
+
 </body>
 
 </html>

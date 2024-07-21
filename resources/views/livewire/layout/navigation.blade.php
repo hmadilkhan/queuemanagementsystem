@@ -11,17 +11,20 @@ $logout = function (Logout $logout) {
 ?>
 <div class="sidebar px-4 py-4 py-md-5 me-0">
     <div class="d-flex flex-column h-100">
-        <a href="{{route('dashboard')}}" class="mb-0 brand-icon">
+        <a href="{{ route('dashboard') }}" class="mb-0 brand-icon">
             <span class="logo-icon">
                 <svg width="35" height="35" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                    <path fill-rule="evenodd"
+                        d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                    <path
+                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
                 </svg>
             </span>
-            <span class="logo-text">{{auth()->user()->name}}</span>
+            <span class="logo-text">{{ auth()->user()->name }}</span>
         </a>
-        <small>{{auth()->user()->name}}</small>
+        <small>{{ auth()->user()->name }}</small>
         <!-- Menu: main ul -->
 
         <ul class="menu-list flex-grow-1 mt-3">
@@ -32,10 +35,13 @@ $logout = function (Logout $logout) {
 
             </li>
             <li class="collapsed">
-                <a class="m-link {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' or Route::currentRouteName() == 'users.index' ) ? 'show' : '' }}" data-bs-toggle="collapse" data-bs-target="#module-types" href="#">
-                    <i class="icofont-briefcase"></i><span>Operations</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                <a class="m-link {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}"
+                    data-bs-toggle="collapse" data-bs-target="#module-types" href="#">
+                    <i class="icofont-briefcase"></i><span>Operations</span> <span
+                        class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'companies.index' or Route::currentRouteName() == 'branches.index' or Route::currentRouteName() == 'roles.index' or Route::currentRouteName() == 'users.index' ) ? 'show' : '' }}" id="module-types">
+                <ul class="sub-menu collapse {{ (Route::currentRouteName() == 'countries.index' or Route::currentRouteName() == 'cities.index' or Route::currentRouteName() == 'roles.index' ) ? 'show' : '' }}"
+                    id="module-types">
                     <x-nav-link x-icon="icofont-building" :href="route('countries.index')" :active="request()->routeIs('countries.index')" wire:navigate>
                         Country
                     </x-nav-link>
@@ -45,16 +51,22 @@ $logout = function (Logout $logout) {
                     <x-nav-link x-icon="icofont-building-alt" :href="route('roles.index')" :active="request()->routeIs('roles.index')" wire:navigate>
                         Roles
                     </x-nav-link>
-                    <x-nav-link x-icon="icofont-building-alt" :href="route('companies.index')" :active="request()->routeIs('companies.index')" wire:navigate>
-                        Company
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('permissions.index')" :active="request()->routeIs('permissions.index')" wire:navigate>
+                        Permissions
                     </x-nav-link>
-                    <x-nav-link x-icon="icofont-building-alt" :href="route('branches.index')" :active="request()->routeIs('branches.index')" wire:navigate>
-                        Branch
-                    </x-nav-link>
-                    <x-nav-link x-icon="icofont-building-alt" :href="route('users.index')" :active="request()->routeIs('users.index')" wire:navigate>
-                        Users
+                    <x-nav-link x-icon="icofont-building-alt" :href="route('users.permissions.index')" :active="request()->routeIs('users.permissions.index')" wire:navigate>
+                        User Permissions
                     </x-nav-link>
                 </ul>
+                <x-nav-link x-icon="icofont-building-alt" :href="route('companies.index')" :active="request()->routeIs('companies.index')" wire:navigate>
+                    Company
+                </x-nav-link>
+                <x-nav-link x-icon="icofont-building-alt" :href="route('branches.index')" :active="request()->routeIs('branches.index')" wire:navigate>
+                    Branch
+                </x-nav-link>
+                <x-nav-link x-icon="icofont-building-alt" :href="route('users.index')" :active="request()->routeIs('users.index')" wire:navigate>
+                    Users
+                </x-nav-link>
             </li>
             <li class="collapsed">
                 <a class="m-link " wire:click="logout">
@@ -158,12 +170,12 @@ $logout = function (Logout $logout) {
 </div>
 </nav> --}}
 @script
-<script>
-    $(".sidebar").hover(function() {
-        $(".sidebar").removeClass("sidebar-mini")
-    }, function() {
+    <script>
+        $(".sidebar").hover(function() {
+            $(".sidebar").removeClass("sidebar-mini")
+        }, function() {
+            $(".sidebar").addClass("sidebar-mini")
+        })
         $(".sidebar").addClass("sidebar-mini")
-    })
-    $(".sidebar").addClass("sidebar-mini")
-</script>
+    </script>
 @endscript
